@@ -69,11 +69,19 @@ while True:
     #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
 
     total_price = total_price + matching_prod["price"]
+
+    matching_name = matching_prod["name"]
+    matching_price = matching_prod["price"]
     
+    matching_prods2 = [{"name": matching_name, "price": matching_price}]
+
+
     selected_ids.append(selected_id)
     #selected_prods.append(matching_prod["name"])
 
-    selected_prods.append(matching_prods)
+    #selected_prods = matching_prod["name"]
+
+    selected_prods.append(matching_prods2)
 
 
 
@@ -84,29 +92,11 @@ while True:
 print("Your Selected Items: ", end='') 
 print(selected_ids)
 
-print(type(selected_prods))
-
-#n = 0
-selected_prod2 = selected_prods[0]
-#type(selected_prods2)
-
-#selected_prod2 = [p["name"] for 
-
-
-#n = n + 1
-
-
-#prod_name_price = [p for p in selected_prods[]]
+print(selected_prods)
 
 
 
 
-breakpoint()
-
-#selected_prods.values("name"))
-
-
-#pprint(selected_prods)
 
 print("TOTAL PRICE: " + str(total_price))
 
