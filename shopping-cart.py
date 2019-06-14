@@ -72,10 +72,6 @@ while True:
     selected_ids.append(selected_id)
 
 
-
-    #matching_price = matching_prod
-
-
     
 print(selected_ids)
 
