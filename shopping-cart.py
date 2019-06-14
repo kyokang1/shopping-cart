@@ -43,20 +43,35 @@ while True:
     selected_id = input("Please input a product identifier, or 'DONE' if completed shopping: ")
     #print(selected_id)
     #print(type(selected_id))
+
+    if selected_id == "DONE":
+        break
+
     matching_prods = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_prod = matching_prods[0]
-    print(matching_prod)
+    matching_prod = matching_prods["id"]
+ 
+ 
+    #print(matching_prod)
     print(type(matching_prod))
-    
+
+
+    #if selected_id not in matching_prods["id"]:
+#        print("Hey, Are you sure that product identifier is correct? We cannot find it. Please try again!")
+
+
+    #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
     
     selected_ids.append(selected_id)
     
-    break
+    #matching_price = matching_prod
 
+
+    
 print(selected_ids)
 
-#if selected_id not in products:
-#    print("Hey, Are you sure that product identifier is correct? We cannot find it. Please try again!")
+print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))
+
+
 
 
 
