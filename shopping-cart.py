@@ -36,7 +36,14 @@ products = [
 ## Capturing User Inputs
 ##
 
+possible_ids = [p["id"] for p in products]
+#print(possible_id) 
+#print(type(possible_id))
+
+
 selected_ids = []
+total_price = 0
+
 
 while True:
 
@@ -50,16 +57,24 @@ while True:
     matching_prods = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_prod = matching_prods[0]
  
- 
+    #print(matching_prods)
+    #print(type(matching_prods))
     #print(matching_prod)
     #print(type(matching_prod))
+    #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
 
+    total_price = total_price + matching_prod["price"]
 
-    #if selected_id not in matching_prods["id"]:
+#    if selected_id not in possible_ids:
 #        print("Hey, Are you sure that product identifier is correct? We cannot find it. Please try again!")
 
 
-    #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
+
+ 
+
+
+
+
     
     selected_ids.append(selected_id)
     
@@ -69,7 +84,10 @@ while True:
     
 print(selected_ids)
 
-print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))
+print("TOTAL PRICE: " + str(total_price))
+
+
+#print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))
 
 
 
