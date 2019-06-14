@@ -70,45 +70,34 @@ while True:
 
     total_price = total_price + matching_prod["price"]
 
-    matching_name = matching_prod["name"]
-    matching_price = matching_prod["price"]
-    
-    matching_prods2 = [{"name": matching_name, "price": matching_price}]
-
+    #matching_name = matching_prod["name"]
+    #matching_price = matching_prod["price"]   
+    #matching_prods2 = [{"name": matching_name, "price": matching_price}]
 
     selected_ids.append(selected_id)
     #selected_prods.append(matching_prod["name"])
-
     #selected_prods = matching_prod["name"]
 
-    selected_prods.append(matching_prods2)
-
+    selected_prods.append(matching_prod)
 
 
 ##
 ## 2. Look-up Products
 ##
-    
+
+print("===============================================") 
 print("Your Selected Items: ", end='') 
 print(selected_ids)
 
-print(selected_prods)
+#print(selected_prods)
 
+for p in selected_prods:
+    price_usd = " ... Price: ${0:.2f}".format(p["price"])
+    print (" + " + p["name"] + str(price_usd))
 
-
-
-
-print("TOTAL PRICE: " + str(total_price))
-
-
-#print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))
-
-
-
-
-
-
-
+print("===============================================") 
+print("TOTAL PRICE IS (BEFORE TAX): " + str(total_price))
+print("===============================================") 
 
 
 ##
