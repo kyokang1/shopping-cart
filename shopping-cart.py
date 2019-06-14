@@ -33,7 +33,7 @@ products = [
 
 
 ##
-## Capturing User Inputs
+## 1. Capturing User Inputs
 ##
 
 possible_ids = [p["id"] for p in products]
@@ -41,6 +41,7 @@ possible_ids = [p["id"] for p in products]
 #print(type(possible_id))
 
 selected_ids = []
+selected_prods = []
 total_price = 0
 
 while True:
@@ -49,18 +50,18 @@ while True:
     #print(selected_id)
     #print(type(selected_id))
 
-    if selected_id == "DONE":
+    if selected_id == "DONE": # if DONE, break the loop
         break
     elif selected_id == "":
-        print("No input. Please input a product identifier!")
+        print("No input. Please input a product identifier!") # if no input, ask to input
         continue
     elif selected_id not in str(possible_ids):
-        print("We cannot find the product. Please try again!")
+        print("We cannot find the product. Please try again!") # if invalid input, ask to input again
         continue
 
     matching_prods = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_prod = matching_prods[0]
- 
+    
     #print(matching_prods)
     #print(type(matching_prods))
     #print(matching_prod)
@@ -68,12 +69,44 @@ while True:
     #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
 
     total_price = total_price + matching_prod["price"]
-   
-    selected_ids.append(selected_id)
-
-
     
+    selected_ids.append(selected_id)
+    #selected_prods.append(matching_prod["name"])
+
+    selected_prods.append(matching_prods)
+
+
+
+##
+## 2. Look-up Products
+##
+    
+print("Your Selected Items: ", end='') 
 print(selected_ids)
+
+print(type(selected_prods))
+
+#n = 0
+selected_prod2 = selected_prods[0]
+#type(selected_prods2)
+
+#selected_prod2 = [p["name"] for 
+
+
+#n = n + 1
+
+
+#prod_name_price = [p for p in selected_prods[]]
+
+
+
+
+breakpoint()
+
+#selected_prods.values("name"))
+
+
+#pprint(selected_prods)
 
 print("TOTAL PRICE: " + str(total_price))
 
@@ -86,15 +119,10 @@ print("TOTAL PRICE: " + str(total_price))
 
 
 
-##
-## Look-up Products
-##
-
-
 
 
 ##
-## Printing the Receipt
+## 3. Printing the Receipt
 ##
 
 
