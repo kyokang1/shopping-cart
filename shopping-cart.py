@@ -100,6 +100,7 @@ print("TOTAL PRICE IS (BEFORE TAX): " + str(total_price))
 print("===============================================") 
 
 
+
 ##
 ## 3. Printing the Receipt
 ##
