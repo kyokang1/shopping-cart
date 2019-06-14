@@ -48,11 +48,11 @@ while True:
         break
 
     matching_prods = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_prod = matching_prods["id"]
+    matching_prod = matching_prods[0]
  
  
     #print(matching_prod)
-    print(type(matching_prod))
+    #print(type(matching_prod))
 
 
     #if selected_id not in matching_prods["id"]:
