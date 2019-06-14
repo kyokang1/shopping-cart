@@ -2,6 +2,7 @@
 # shopping_cart.py
 
 from pprint import pprint
+import datetime
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -44,6 +45,13 @@ selected_ids = []
 selected_prods = []
 total_price = 0
 
+#Greeting
+print("") 
+print("===============================================") 
+print("LET'S START YOUR SHOPPING!!") 
+
+
+
 while True:
 
     selected_id = input("Please input a product identifier, or 'DONE': ")
@@ -85,6 +93,7 @@ while True:
 ## 2. Look-up Products
 ##
 
+print("") 
 print("===============================================") 
 print("Your Selected Items: ", end='') 
 print(selected_ids)
@@ -95,15 +104,55 @@ for p in selected_prods:
     price_usd = " ... Price: ${0:.2f}".format(p["price"])
     print (" + " + p["name"] + str(price_usd))
 
-print("===============================================") 
-print("TOTAL PRICE IS (BEFORE TAX): " + str(total_price))
-print("===============================================") 
-
+print("-----------------------------------------------") 
+print("TOTAL PRICE (BEFORE TAX): " + str(total_price))
+print("PLEASE FIND YOUR RECEIPT BELOW") 
 
 
 ##
 ## 3. Printing the Receipt
 ##
+
+print("") 
+print("===============================================") 
+
+#Store information
+print("CUSTOMER RECEIPT") 
+print("K-YOUNG 'ALL-IN-ONE' GROCERY STORE") 
+print("www.kyoungkang.com  // (212)-444-4444") 
+
+#Checkout time
+print("-----------------------------------------------") 
+now = datetime.datetime.now()
+print("CHECK-OUT: " + str(now.strftime("%Y/%m/%d  %H:%M:%S"))) 
+
+#Selected items & price in USD format
+print("-----------------------------------------------") 
+print("SELECTED PRODUCTS:") 
+
+for p in selected_prods:
+    price_usd = " ...... ${0:.2f}".format(p["price"])
+    print ("   " + p["name"] + str(price_usd))
+
+#Before & After Tax
+def tax_ny(amt):
+    return amt * 0.0875
+def after_tax(amt):
+    return amt * 1.0875
+
+print("-----------------------------------------------") 
+print("SUBTOTAL: " + str("${0:.2f}".format(total_price)))
+print("TAX (NY 8.75%): " + str("${0:.2f}".format(tax_ny(total_price))))
+print("TOTAL: " + str("${0:.2f}".format(after_tax(total_price))))
+
+#Thank you comment
+print("-----------------------------------------------") 
+print("THANK YOU FOR SHOPPING AT KYOUNG'S!")
+print("") 
+print("===============================================") 
+print("") 
+
+
 
 
 
