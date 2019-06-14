@@ -40,19 +40,23 @@ possible_ids = [p["id"] for p in products]
 #print(possible_id) 
 #print(type(possible_id))
 
-
 selected_ids = []
 total_price = 0
 
-
 while True:
 
-    selected_id = input("Please input a product identifier, or 'DONE' if completed shopping: ")
+    selected_id = input("Please input a product identifier, or 'DONE': ")
     #print(selected_id)
     #print(type(selected_id))
 
     if selected_id == "DONE":
         break
+    elif selected_id == "":
+        print("No input. Please input a product identifier!")
+        continue
+    elif selected_id not in str(possible_ids):
+        print("We cannot find the product. Please try again!")
+        continue
 
     matching_prods = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_prod = matching_prods[0]
@@ -64,20 +68,11 @@ while True:
     #print("Selected Product: " + matching_prod["name"] + " // " + str(matching_prod["price"]))   
 
     total_price = total_price + matching_prod["price"]
-
-#    if selected_id not in possible_ids:
-#        print("Hey, Are you sure that product identifier is correct? We cannot find it. Please try again!")
-
-
-
- 
-
-
-
-
-    
+   
     selected_ids.append(selected_id)
-    
+
+
+
     #matching_price = matching_prod
 
 
